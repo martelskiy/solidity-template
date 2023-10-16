@@ -10,7 +10,7 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        enabled: false, //set to 'false' when API KEY env var is not set
+        enabled: false,
         url: ``,
       },
     },
