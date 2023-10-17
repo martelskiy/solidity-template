@@ -11,7 +11,7 @@ contract SampleTest is Test {
         sut = new Sample();
     }
 
-    function test_Sample() public {
+    function testSample() public {
         assertFalse(false);
     }
 }
