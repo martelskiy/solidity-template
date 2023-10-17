@@ -55,9 +55,9 @@ jobs:
           npm install
           npm run test
 
-  solhint:
+  lint:
     needs: [compile]
-    name: Solhint
+    name: NPM lint
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -70,16 +70,10 @@ jobs:
         with:
           node-version: "18.x"
 
-      - name: Install solhint
+      - name: NPM lint
         run: |
-          npm install -g solhint
-          solhint --version
-
-      - name: Initialize solhit
-        run: solhint --init
-
-      - name: Run solhint
-        run: solhint 'src/**/*.sol'
+          npm install
+          npm run lint
 
   analyze:
     name: Slither Analysis
