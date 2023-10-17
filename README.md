@@ -8,6 +8,7 @@ This template utilizes set of various frameworks:
 - **Forge** for tests (it is possible to write tests with both Hardhat and Forge)
 - **NPM** used as a package manager
 - **GitHub Action** are used for CI/CD pipelines
+- **Solhint** and its integration with **Prettier** (`npm run lint` with trigger both **Solhint** and **Prettier** runs)
 
 ## How to use it
 
