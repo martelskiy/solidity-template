@@ -79,15 +79,35 @@ jobs:
     name: Slither Analysis
     needs: [compile]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
     permissions:
+      actions: read
       contents: read
       security-events: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install dependencies
+        run: |
+          forge install
+          npm install
+
+      - name: Build project
+        run: forge build --build-info --force
 
       - uses: crytic/slither-action@v0.3.0
         id: slither
         with:
+          ignore-compile: true
           target: "src/"
           sarif: results.sarif
           fail-on: none
