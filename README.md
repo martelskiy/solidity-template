@@ -12,8 +12,6 @@ This template utilizes set of various frameworks:
 
 ## How to use it
 
-Certainly, here's your README text with improved grammar and clarity:
-
 - Create a new GitHub project using this template.
 - Navigate to the `src` folder and run `npm install`.
 
